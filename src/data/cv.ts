@@ -141,6 +141,16 @@ export const skills: Skill[] = [
 // Add an entry here to attach PDFs, code/OSF links or notes, or to list a work missing from ORCID.
 const curatedPublications: Publication[] = [
 	{
+		title: 'An integrated virtual reality platform for naturalistic neuroimaging with magnetoencephalography',
+		authors:
+			'Zabbah, S., Alexander, N. A., Mohammadi, Y., Mariola, A., Seymour, R. A., Puvvada, S., Barnes, G. R., & Bach, D. R.',
+		journal: 'bioRxiv',
+		time: '2026',
+		category: 'Preprints',
+		doi: '10.64898/2026.01.28.701672',
+		link: 'https://doi.org/10.64898/2026.01.28.701672',
+	},
+	{
 		title: 'Linking brain–heart interactions to emotional arousal in immersive virtual reality',
 		authors:
 			'Fourcade, A., Klotzsche, F., Hofmann, S. M., Mariola, A., Nikulin, V. V., Villringer, A., & Gaebler, M.',

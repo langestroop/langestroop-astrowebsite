@@ -50,12 +50,17 @@ function sameWork(a: Publication, b: Publication): boolean {
 	if (doiA && doiA === normalizeDoi(b.doi)) return true;
 	const titleA = normalizeTitle(a.title);
 	const titleB = normalizeTitle(b.title);
-	return titleA.length > 0 && titleA === titleB;
+	if (!titleA || !titleB) return false;
+	if (titleA === titleB) return true;
+	// Same work with an added prefix/subtitle, e.g. "MEGgles: An integrated ..." vs "An integrated ...".
+	const [shorter, longer] = titleA.length < titleB.length ? [titleA, titleB] : [titleB, titleA];
+	return shorter.length >= 30 && longer.includes(shorter);
 }
 
 /**
  * Curated entries always win; works fetched from ORCID are added only when no curated
- * entry describes the same work (same DOI or same title). Result is newest first.
+ * entry describes the same work (same DOI, or one title equal to or contained in the other).
+ * Result is newest first.
  */
 export function mergePublications(curated: Publication[], fetched: Publication[]): Publication[] {
 	const extra = fetched.filter((work) => !curated.some((entry) => sameWork(entry, work)));

@@ -32,3 +32,12 @@ test('curated entries win over fetched duplicates and the result is newest first
   assert.deepEqual(merged.map((p) => p.title), ['New paper', 'Linking brain–heart interactions', 'Old paper']);
   assert.equal(merged[1].pdf, 'pdf/a.pdf');
 });
+
+test('a title with an added prefix is treated as the same work', () => {
+  const curated = [{ title: 'An integrated virtual reality platform for naturalistic neuroimaging', authors: '', journal: 'bioRxiv', time: '2026' }];
+  const fetched = [
+    { title: 'MEGgles: An integrated virtual reality platform for naturalistic neuroimaging', authors: '', journal: 'JoCN Forum', time: '2026' },
+    { title: 'Neuroimaging', authors: '', journal: 'J', time: '2026' },
+  ];
+  assert.deepEqual(mergePublications(curated, fetched).map((p) => p.journal), ['bioRxiv', 'J']);
+});
