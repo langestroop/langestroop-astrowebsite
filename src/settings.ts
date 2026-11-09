@@ -15,7 +15,7 @@ export const profile: Profile = {
 		{
 			title: 'Naturalistic Neuroimaging',
 			description:
-				'Developing and using Optically Pumped Magnetometers (OPM-MEG), alongside M/EEG and eye tracking, to study the brain during naturalistic experiences.',
+				'Developing and using Optically Pumped Magnetometers (OP-MEG), alongside M/EEG and eye tracking, to study the brain during naturalistic experiences.',
 			field: 'neuroimaging',
 		},
 		{

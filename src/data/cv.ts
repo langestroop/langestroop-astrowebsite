@@ -4,7 +4,7 @@ import type { Award, Education, Experience, Publication, Skill } from '@/types/c
 
 export const experiences: Experience[] = [
 	{
-		company: 'OPM-MEG Group, Department of Imaging Neuroscience, University College London',
+		company: 'OP-MEG Group, Department of Imaging Neuroscience, University College London',
 		time: 'April 2024 - Present',
 		title: 'OPM Research Fellow',
 		location: 'London, UK',
@@ -121,7 +121,7 @@ export const awards: Award[] = [
 export const skills: Skill[] = [
 	{
 		title: 'Neuroimaging & Physiology',
-		description: 'OPM-MEG, MEG, EEG (including portable/dry systems), eye tracking, ECG',
+		description: 'OP-MEG, MEG, EEG (including portable/dry systems), eye tracking, ECG',
 	},
 	{
 		title: 'Experimental Paradigms',
