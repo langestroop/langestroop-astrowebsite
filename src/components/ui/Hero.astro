@@ -8,22 +8,20 @@ const {fullName, title, institute, profilePicture} = Astro.props
 ---
 <div class='flex-1'>
   <h1 class='text-4xl font-bold mb-4'>
-    Welcome! I'm <span class='text-secondary'>{fullName}</span>
+    Hi! I'm <span class='text-secondary'>{fullName}</span>
   </h1>
-  <p class='text-xl text-gray-600 mb-4'>{title}{institute ? ` at ${institute}` : ''}</p>
-  <p class='text-lg mb-6'>
-    Brief impactful description of your research focus and academic mission.
-    Highlight your key contributions and areas of expertise.
-  </p>
-  <div class='flex gap-4'>
+  <p class='text-xl text-base-content/70 mb-6'>{title}{institute ? ` at ${institute}` : ''}</p>
+  <div class='text-lg mb-6 space-y-4 [&_a]:link [&_a]:link-hover [&_a]:text-secondary'>
+    <slot />
+  </div>
+  <div class='flex gap-4 max-w-md'>
     <SocialIcons />
   </div>
 </div>
-<div class='size-72 lg:block hidden'>
-  <!-- Add your profile image -->
+<div class='size-72 lg:block hidden shrink-0'>
   <Image
     src={profilePicture}
-    alt={fullName}
+    alt={`Portrait of ${fullName}`}
     class='w-full h-full mask mask-circle size-44'
   />
 </div>

@@ -21,9 +21,9 @@ export const GET: APIRoute = async () => {
     ...publications.flatMap((paper, index) => paper.title.trim() ? [{
       id: `paper:${index}`,
       title: paper.title,
-      content: paper.abstract,
+      content: [paper.abstract, paper.authors, paper.journal].filter(Boolean).join(' '),
       category: 'paper',
-      url: paperSearchUrl(paper.link, base, index),
+      url: paperSearchUrl(paper.link ?? '', base, index),
     }] : []),
   ];
   const db = createSearchDatabase();

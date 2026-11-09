@@ -2,52 +2,77 @@
 import Layout from "@/layouts/Layout.astro";
 import { publications } from "@/data/cv";
 import { highlightAuthor } from "@/lib/utils";
-import {template} from "@/settings";
+import { profile, template } from "@/settings";
+import type { PublicationCategory } from "@/types/cv";
 
-const ALL_PAPERS = publications; // This will be replaced with dynamic data later
+const CATEGORY_ORDER: PublicationCategory[] = [
+  "Preprints",
+  "Journal Publications",
+  "Book Chapters",
+  "Conference Publications",
+];
+
+// Keep each paper's global index so `#paper-N` anchors (used by search) stay stable.
+const indexed = publications.map((paper, index) => ({ paper, index }));
+const groups = CATEGORY_ORDER.map((category) => ({
+  category,
+  items: indexed.filter(({ paper }) => paper.category === category),
+})).filter((group) => group.items.length > 0);
+const uncategorised = indexed.filter(({ paper }) => !paper.category);
+if (uncategorised.length > 0) groups.push({ category: "Other" as PublicationCategory, items: uncategorised });
 ---
 
-<Layout title="Papers">
+<Layout title={`Publications | ${profile.fullName}`}>
   <div class="prose max-w-none">
-    <h1 class="text-3xl font-bold mb-8">Publications</h1>
+    <h1 class="text-3xl font-bold mb-4">Publications</h1>
+    <p class="text-lg mb-10">
+      An up-to-date list of my publications with the corresponding PDF files. Whenever available, the
+      OSF and/or GitHub repositories containing pre-registration materials, data and scripts are also included.
+    </p>
 
-    <div class="space-y-8">
-      {
-        ALL_PAPERS.map((paper, index) => (
-          <div id={`paper-${index + 1}`} class="card bg-base-200 scroll-mt-8">
-            <div class="card-body">
-              <h2 class="card-title text-xl">
-                <a href={template.base + paper.link} class="hover:text-accent">
-                  {paper.title}
-                </a>
-              </h2>
-              <p class="text-base mb-2">
-                <span class="font-medium">Authors:</span>{" "}
-                <span set:html={highlightAuthor(paper.authors)} />
-              </p>
-              <p class="text-sm mb-3">
-                <span class="italic">{paper.journal}</span> • {paper.time}
-              </p>
-              <p class="text-sm text-base-content/80">{paper.abstract}</p>
-              <div class="card-actions justify-end mt-4">
-                <a href={paper.link} class="btn btn-sm btn-secondary text-secondary-content">
-                  Read Paper
-                </a>
-              </div>
-            </div>
+    {
+      groups.map(({ category, items }) => (
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold mb-6 border-b pb-2">{category}</h2>
+          <div class="space-y-6 not-prose">
+            {items.map(({ paper, index }) => (
+              <article id={`paper-${index + 1}`} class="card bg-base-200 scroll-mt-8">
+                <div class="card-body">
+                  <h3 class="card-title text-xl">
+                    {paper.link ? (
+                      <a href={paper.link} target="_blank" class="hover:text-accent">{paper.title}</a>
+                    ) : paper.title}
+                  </h3>
+                  <p class="text-base" set:html={highlightAuthor(paper.authors)} />
+                  <p class="text-sm">
+                    <span class="italic">{paper.journal}</span> • {paper.time}
+                  </p>
+                  {paper.note && <p class="text-sm text-base-content/70">{paper.note}</p>}
+                  {paper.abstract && <p class="text-sm text-base-content/80">{paper.abstract}</p>}
+                  <div class="card-actions justify-end mt-2">
+                    {paper.doi && (
+                      <a href={`https://doi.org/${paper.doi}`} target="_blank" class="btn btn-sm btn-ghost font-mono">
+                        doi:{paper.doi}
+                      </a>
+                    )}
+                    {paper.pdf && (
+                      <a href={`${template.base}/${paper.pdf}`} target="_blank" class="btn btn-sm btn-secondary text-secondary-content">
+                        PDF
+                      </a>
+                    )}
+                    {paper.osf && (
+                      <a href={paper.osf} target="_blank" class="btn btn-sm btn-outline">OSF</a>
+                    )}
+                    {paper.code && (
+                      <a href={paper.code} target="_blank" class="btn btn-sm btn-outline">Code</a>
+                    )}
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
-        ))
-      }
-    </div>
-
-    <div class="flex justify-center mt-8">
-      <div class="join">
-        <button class="join-item btn btn-sm">«</button>
-        <button class="join-item btn btn-sm">1</button>
-        <button class="join-item btn btn-sm btn-active">2</button>
-        <button class="join-item btn btn-sm">3</button>
-        <button class="join-item btn btn-sm">»</button>
-      </div>
-    </div>
+        </section>
+      ))
+    }
   </div>
 </Layout>

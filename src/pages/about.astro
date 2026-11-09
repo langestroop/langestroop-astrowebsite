@@ -1,0 +1,12 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { profile } from '@/settings'
+import { Content } from '@/data/about.md'
+---
+
+<Layout title={`About | ${profile.fullName}`}>
+	<article class='prose max-w-none prose-a:text-secondary'>
+		<h1 class='text-3xl font-bold mb-8'>About</h1>
+		<Content />
+	</article>
+</Layout>

@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
 
-import { profile } from '@/settings'
+import { profile, template } from '@/settings'
 import { publications } from '@/data/cv'
 import ProfilePictures from '@/assets/profile_pictures.jpg'
 import Hero from '@/components/ui/Hero.astro'
@@ -9,9 +9,7 @@ import Grid from '@/components/ui/Grid.astro'
 import ArticleList from '@/components/ui/ArticleList.astro'
 
 const { fullName, title, institute, research_areas } = profile
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const recentPublications = publications.slice(0, 3)
 ---
 
 <Layout>
@@ -22,7 +20,21 @@ const { fullName, title, institute, research_areas } = profile
 			title={title}
 			institute={institute}
 			profilePicture={ProfilePictures}
-		/>
+		>
+			<p>
+				I am a Postdoctoral Research Fellow at University College London (UCL) in the
+				<a href='https://www.fil.ion.ucl.ac.uk/team/meg-team/' target='_blank'>OPM-MEG Group</a>
+				with Prof <a href='https://scholar.google.com/citations?user=2WWDqYkAAAAJ&hl=en' target='_blank'>Gareth Barnes</a>,
+				focusing on the development and use of Optically Pumped Magnetometers (OPM) for naturalistic
+				neuroscience experiments.
+			</p>
+			<p>
+				My work lies at the intersection of human perception, memory and metacognition. I am interested
+				in the neural and computational mechanisms underlying event segmentation — how we segment the
+				continuous flow of information reaching our senses into units of experience — and how this
+				influences memory and reality monitoring.
+			</p>
+		</Hero>
 	</section>
 
 	<!-- Research Areas -->
@@ -31,7 +43,8 @@ const { fullName, title, institute, research_areas } = profile
 	</section>
 
 	<!-- Recent Publications -->
-	<section class='py-12 border-t'>
-		<ArticleList listTitle='Recent Publications' listItems={publications} />
+	<section class='py-12'>
+		<ArticleList listTitle='Recent Publications' listItems={recentPublications} />
+		<a href={`${template.base}/papers`} class='btn btn-outline btn-secondary mt-8'>All publications</a>
 	</section>
 </Layout>

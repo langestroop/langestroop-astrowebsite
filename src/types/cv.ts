@@ -19,6 +19,8 @@ export interface Skill {
   description: string;
 }
 
+export type PublicationCategory = 'Preprints' | 'Journal Publications' | 'Book Chapters' | 'Conference Publications';
+
 export interface Publication {
   title: string;
   authors: string;
@@ -26,6 +28,12 @@ export interface Publication {
   time: string;
   link?: string;
   abstract?: string;
+  category?: PublicationCategory;
+  doi?: string;
+  pdf?: string; // Path relative to the site base, e.g. 'pdf/paper.pdf'
+  code?: string;
+  osf?: string;
+  note?: string;
 }
 
 export function isExperience(element: Experience | Education): element is Experience {
