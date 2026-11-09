@@ -1,4 +1,6 @@
 import type { Award, Education, Experience, Publication, Skill } from '@/types/cv';
+import { mergePublications } from '@/lib/publications';
+import orcidPublications from './publications.orcid.json';
 
 // Entries are displayed in the order they appear here (most recent first).
 
@@ -134,7 +136,10 @@ export const skills: Skill[] = [
 	},
 ];
 
-export const publications: Publication[] = [
+// Curated publications: these take priority over the ones synced from ORCID
+// (src/data/publications.orcid.json, refreshed with `npm run sync:pubs` and on every deploy).
+// Add an entry here to attach PDFs, code/OSF links or notes, or to list a work missing from ORCID.
+const curatedPublications: Publication[] = [
 	{
 		title: 'Linking brain–heart interactions to emotional arousal in immersive virtual reality',
 		authors:
@@ -210,4 +215,16 @@ export const publications: Publication[] = [
 		link: 'https://ieeexplore.ieee.org/abstract/document/8446275',
 		pdf: 'pdf/klotzsche_vr_2018.pdf',
 	},
+	{
+		title: 'Segmenting reality: investigating the role of perceptual change in shaping sense of reality in naturalistic contexts',
+		authors: 'Mariola, A.',
+		journal: 'PhD thesis, University of Sussex',
+		time: '2023',
+		category: 'Theses',
+	},
 ];
+
+export const publications: Publication[] = mergePublications(
+	curatedPublications,
+	orcidPublications as Publication[],
+);

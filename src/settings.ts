@@ -30,12 +30,6 @@ export const profile: Profile = {
 				'The neural and computational mechanisms linking what we perceive to what we remember and how we judge it.',
 			field: 'neuroscience',
 		},
-		{
-			title: 'Computational Modelling',
-			description:
-				'Model-based and data-driven approaches, from machine learning and spatial filtering to models of perception, applied to naturalistic paradigms such as videos and XR.',
-			field: 'computer-science',
-		},
 	],
 }
 

@@ -1,0 +1,74 @@
+[
+	{
+		"title": "Modular Arrays for High Precision Wearable MEG",
+		"authors": "Alexander, N. A., Mariola, A., Puvvada, S., Bezsudnova, Y., Tierney, T. M., Barnes, G. R., & Callaghan, M. F.",
+		"journal": "bioRxiv",
+		"time": "2026",
+		"category": "Preprints",
+		"doi": "10.64898/2026.08.19.745485",
+		"link": "https://doi.org/10.64898/2026.08.19.745485"
+	},
+	{
+		"title": "MEGgles: An integrated virtual reality platform for naturalistic neuroimaging with magnetoencephalography",
+		"authors": "Bach, D., Zabbah, S., Alexander, N., Mohammadi, Y., Mariola, A., Seymour, R., Puvvada, S., & Barnes, G.",
+		"journal": "JoCN Forum",
+		"time": "2026",
+		"category": "Journal Publications",
+		"doi": "10.21428/8e6ba8ef.a461d940",
+		"link": "https://doi.org/10.21428/8e6ba8ef.a461d940"
+	},
+	{
+		"title": "Distorting anatomy to test MEG models and metrics",
+		"authors": "López, J. D., Balbastre, Y., Ashburner, J., Mariola, A., Bonaiuto, J. J., & Barnes, G.",
+		"journal": "Imaging Neuroscience, 4, IMAG.a.1189",
+		"time": "2026",
+		"category": "Journal Publications",
+		"doi": "10.1162/imag.a.1189",
+		"link": "https://doi.org/10.1162/imag.a.1189"
+	},
+	{
+		"title": "Linking brain-heart interactions to emotional arousal in immersive virtual reality",
+		"authors": "Fourcade, A., Klotzsche, F., Hofmann, S. M., Mariola, A., Nikulin, V. V., Villringer, A., & Gaebler, M.",
+		"journal": "bioRxiv",
+		"time": "2024",
+		"category": "Preprints",
+		"doi": "10.1101/2024.01.04.574165",
+		"link": "https://doi.org/10.1101/2024.01.04.574165"
+	},
+	{
+		"title": "Using Extended Reality to Study the Experience of Presence",
+		"authors": "Suzuki, K., Mariola, A., Schwartzman, D. J., & Seth, A. K.",
+		"journal": "Current Topics in Behavioral Neurosciences, 255-285",
+		"time": "2023",
+		"category": "Book Chapters",
+		"doi": "10.1007/7854_2022_401",
+		"link": "https://doi.org/10.1007/7854_2022_401"
+	},
+	{
+		"title": "Event segmentation in continuous, naturalistic videos from model-based, data-driven, and human perspectives",
+		"authors": "Mariola, A., Fountas, Z., Barnett, L., & Roseboom, W.",
+		"journal": "Center for Open Science",
+		"time": "2022",
+		"category": "Preprints",
+		"doi": "10.31234/osf.io/t6fkg",
+		"link": "https://doi.org/10.31234/osf.io/t6fkg"
+	},
+	{
+		"title": "Decoding subjective emotional arousal from EEG during an immersive virtual reality experience",
+		"authors": "Hofmann, S. M., Klotzsche, F., Mariola, A., Nikulin, V., Villringer, A., & Gaebler, M.",
+		"journal": "eLife, 10, e64812",
+		"time": "2021",
+		"category": "Journal Publications",
+		"doi": "10.7554/elife.64812",
+		"link": "https://doi.org/10.7554/elife.64812"
+	},
+	{
+		"title": "Clear Evidence for Electrophysiological Signatures of Duration and Rhythm Prediction, but not across Sensory Modalities",
+		"authors": "Mariola, A., Baykova, R., Chang, A. Y., Seth, A. K., & Roseboom, W.",
+		"journal": "2019 Conference on Cognitive Computational Neuroscience",
+		"time": "2019",
+		"category": "Conference Publications",
+		"doi": "10.32470/ccn.2019.1389-0",
+		"link": "https://doi.org/10.32470/ccn.2019.1389-0"
+	}
+]

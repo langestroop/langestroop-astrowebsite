@@ -99,6 +99,12 @@ Use `time` for dates and `school` for education institutions. The CV sorts entri
 
 The fields for skills and publications are defined in [src/types/cv.ts](src/types/cv.ts). Publications include a title, authors, journal, and time, with optional link and abstract fields.
 
+### Publications (synced from ORCID)
+
+`npm run sync:pubs` fetches the works on the ORCID record (`0000-0003-4660-1306`), adds full author lists and venues from Crossref, and writes `src/data/publications.orcid.json`. The deploy workflow runs it on every push and weekly (Monday 06:00 UTC), so new ORCID entries reach the site automatically. If the sync fails, the committed JSON is used.
+
+Curated entries in `src/data/cv.ts` take priority over synced ones that have the same DOI or title. Use them to attach PDFs, code/OSF links or notes, or to list works missing from ORCID. To keep ORCID current, grant Crossref auto-update permission in your ORCID account.
+
 ### Blog posts
 
 Add Markdown files to `src/content/BlogPosts/`. Each post needs a title, a quoted date, and an excerpt. Tags are optional.

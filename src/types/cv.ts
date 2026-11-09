@@ -25,7 +25,7 @@ export interface Award {
   time: string;
 }
 
-export type PublicationCategory = 'Preprints' | 'Journal Publications' | 'Book Chapters' | 'Conference Publications';
+export type PublicationCategory = 'Preprints' | 'Journal Publications' | 'Book Chapters' | 'Conference Publications' | 'Theses';
 
 export interface Publication {
   title: string;
