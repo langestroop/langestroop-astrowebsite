@@ -1,6 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import { experiences, education, skills, publications } from '../data/cv'
+import { experiences, researchExperience, education, awards, skills, publications } from '../data/cv'
 import CvTimeline from '@/components/ui/CvTimeline.astro'
 import List from '@/components/ui/List.astro'
 import PublicationsList from '@/components/ui/PublicationsList.astro'
@@ -16,7 +16,7 @@ import { profile } from '@/settings'
 		experiences.length > 0 && (
 			<section class='mb-12'>
 				<h2 class='text-2xl font-bold mb-6 border-b pb-2'>
-					Research Experience
+					Academic Positions
 				</h2>
 				<CvTimeline elements={experiences} colored={true} />
 			</section>
@@ -30,6 +30,35 @@ import { profile } from '@/settings'
 					Education
 				</h2>
 				<CvTimeline elements={education} colored={true} />
+			</section>
+		)
+	}
+
+	{
+		researchExperience.length > 0 && (
+			<section class='mb-12'>
+				<h2 class='text-2xl font-bold mb-6 border-b pb-2'>
+					Research Experience
+				</h2>
+				<CvTimeline elements={researchExperience} colored={true} />
+			</section>
+		)
+	}
+
+	{
+		awards.length > 0 && (
+			<section class='mb-12'>
+				<h2 class='text-2xl font-bold mb-6 border-b pb-2'>
+					Awards &amp; Honours
+				</h2>
+				<ul class='space-y-3'>
+					{awards.map((award) => (
+						<li class='flex gap-4'>
+							<span class='font-mono text-base-content/70 w-12 shrink-0'>{award.time}</span>
+							<span><span class='font-semibold'>{award.title}</span>, {award.institution}</span>
+						</li>
+					))}
+				</ul>
 			</section>
 		)
 	}

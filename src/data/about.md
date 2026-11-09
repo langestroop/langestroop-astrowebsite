@@ -1,6 +1,6 @@
 ## Education and Research
 
-I am currently working as a Postdoctoral Research Fellow at University College London (UCL) in the [OPM-MEG Group](https://www.fil.ion.ucl.ac.uk/team/meg-team/) with Prof [Gareth Barnes](https://scholar.google.com/citations?user=2WWDqYkAAAAJ&hl=en).
+I am currently working as an OPM Research Fellow at University College London (UCL) in the [OPM-MEG Group](https://www.fil.ion.ucl.ac.uk/team/meg-team/) with Prof [Gareth Barnes](https://scholar.google.com/citations?user=2WWDqYkAAAAJ&hl=en).
 
 Before joining UCL, I did a postdoc at the University of Sussex (UK) in the [Episodic Memory Group](https://www.sussex.ac.uk/research/centres/episodic-memory-group/index) with Prof [Chris Bird](https://scholar.google.co.uk/citations?user=smxv3nIAAAAJ&hl=en).
 
@@ -24,4 +24,4 @@ Aside from sports, I really like reading, modern and contemporary art, and exper
 
 ## Get in Touch
 
-Feel free to reach out via [email](mailto:a.mariola@protonmail.ch) or any of the social links in the sidebar.
+Feel free to reach out via my [professional](mailto:a.mariola@ucl.ac.uk) or [personal](mailto:a.mariola@protonmail.ch) email or any of the social links in the sidebar.

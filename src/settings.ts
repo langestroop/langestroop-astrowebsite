@@ -41,7 +41,7 @@ export const profile: Profile = {
 
 // Set equal to an empty string to hide the icon that you don't want to display
 export const social = {
-	email: 'a.mariola@protonmail.ch',
+	email: 'a.mariola@ucl.ac.uk',
 	linkedin: 'https://www.linkedin.com/in/alberto-mariola-449b91160/',
 	x: 'https://x.com/langestroop',
 	bluesky: 'https://bsky.app/profile/langestroop.bsky.social',

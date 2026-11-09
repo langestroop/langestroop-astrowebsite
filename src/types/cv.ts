@@ -19,6 +19,12 @@ export interface Skill {
   description: string;
 }
 
+export interface Award {
+  title: string;
+  institution: string;
+  time: string;
+}
+
 export type PublicationCategory = 'Preprints' | 'Journal Publications' | 'Book Chapters' | 'Conference Publications';
 
 export interface Publication {
